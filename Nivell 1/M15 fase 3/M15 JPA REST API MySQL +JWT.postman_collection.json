@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "5253afd5-4b9d-4f39-86e4-870602c8ad9b",
+		"name": "M15 JPA REST API MySQL +JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTHENTICATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"edu\",\r\n\"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llistar jugadors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifica nom jugador",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": null,\r\n            \"name\": \"DDi No no no noAnonim\",\r\n            \"data_entrada\": null\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/PUT/players/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"PUT",
+						"players",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear jugador",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": null,\r\n            \"name\": \"El nou nou\",\r\n            \"data_entrada\":null\r\n        }\r\n       ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/POST/players",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"POST",
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llistar les tirades del jugador",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/1/games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Afegir tirada",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": null,\r\n            \"guanya\": null,\r\n            \"tirada1\": null,\r\n            \"tirada2\": null\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/POST/players/1/games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"POST",
+						"players",
+						"1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar les tirades d'un jugador",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/DELETE/players/7/games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"DELETE",
+						"players",
+						"7",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llistat partides guanyades per un jugador",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/1/encertsgames",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"1",
+						"encertsgames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ranking mig encerts de tots els jugadors del sistema",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/ranking",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna jugadors amb millor % d'encert",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/ranking/winner",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"ranking",
+						"winner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna jugadors amb pitjor % d'encert",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/ranking/loser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"ranking",
+						"loser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retorna ranking mig encerts de tots els jugadors",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlZHUiLCJleHAiOjE2MzA5MDEzODksImlhdCI6MTYzMDg4MzM4OX0.K6GO1jfPR6GiyUXO49zI5ZZ6TggYp96VQ-spGWsCTIMjCawUKgAs_SXYimmEgJapLcJvYA4x228tliVn42z2_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/GET/players/ranking",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"GET",
+						"players",
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
